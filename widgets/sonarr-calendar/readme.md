@@ -16,12 +16,19 @@ widgets:
   - $include: widgets/sonarr-calendar/calendar.yml
 ```
 
+## Environment Variables
+
+| VARIABLE | Description |
+| --- | --- |
+| `SONARR_URL` | Required, Sonarr base URL, e.g. `http://sonarr:8989` |
+| `SONARR_API_KEY` | Required, Your Sonarr API key (Settings → General → Security) |
+
 ## Options
 
 | Option | Description | Default |
 | --- | --- | --- |
-| `api-base-url` | Required, Sonarr base URL, e.g. `http://sonarr:8989` |
-| `api-key` | Required, Your Sonarr API key (Settings → General → Security) |
+| `api-base-url` | Required, Sonarr base URL, e.g. `http://sonarr:8989` | `${SONARR_URL}` |
+| `api-key` | Required, Your Sonarr API key (Settings → General → Security) | `${SONARR_API_KEY}` |
 | `collapse-after` | Optional, number of items after which the list collapses | `5` |
 | `start-day` | Optional, days offset from today to start the calendar |  `0` |
 | `end-day` | Optional, days from today to include | `30` |
